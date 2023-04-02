@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import { MantaPrivateWallet, SbtMantaPrivateWallet, Environment, Network, MantaUtilities } from 'manta.js';
+import { web3Accounts, web3Enable, web3FromSource } from '@polkadot/extension-dapp';
 
 
 const privateWalletConfig = {
@@ -31,17 +32,21 @@ const privateTransferOnlySignTest = async () => {
 
   console.log(polkadotConfig);
   console.log(privateWallet);
-
+  return "Hello World";
 }
 
 function App() {
+  privateTransferOnlySignTest()
+      .then((result) => {  console.log(result);  })
+      .catch((error) => {  console.log(error);  });
+
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
-          {privateTransferOnlySignTest()}
+
         </p>
         <a
           className="App-link"
