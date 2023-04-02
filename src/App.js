@@ -2,7 +2,13 @@ import logo from './logo.svg';
 import './App.css';
 import { MantaPrivateWallet, SbtMantaPrivateWallet, Environment, Network, MantaUtilities } from 'manta.js';
 import { web3Accounts, web3Enable, web3FromSource } from '@polkadot/extension-dapp';
+import { hot } from 'react-hot-loader';
 
+console.log({MantaPrivateWallet});
+console.log({SbtMantaPrivateWallet});
+console.log({Environment});
+console.log({Network});
+console.log({MantaUtilities});
 
 const privateWalletConfig = {
   environment: Environment.Production,
@@ -61,4 +67,4 @@ function App() {
   );
 }
 
-export default App;
+export default hot(module)(App);
